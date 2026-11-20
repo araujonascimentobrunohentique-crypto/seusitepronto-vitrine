@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seu Site Pronto · Sites prontos para pequenos negócios</title>
+  <meta name="description" content="Modelos de site de uma página para barbearia, psicólogo e outros negócios do bairro. Você troca o nome, as fotos e o WhatsApp. O resto já está feito.">
+
+  <!-- Ícone da aba do navegador -->
+  <link rel="icon" type="image/png" href="img/simbolo-sp-512.png">
+
+  <!-- Compartilhamento (WhatsApp, Instagram, Facebook...) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Seu Site Pronto · Sites prontos para pequenos negócios">
+  <meta property="og:description" content="Site de uma página pronto pro seu negócio. Você troca o nome, as fotos e o WhatsApp. O resto já está feito.">
+  <!-- TROCAR DEPOIS DE PUBLICAR: redes sociais precisam do endereço completo,
+       por exemplo https://seusite.netlify.app/img/logo-instagram-1080.png -->
+  <meta property="og:image" content="img/logo-instagram-1080.png">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== TOPO ===== -->
+  <header class="topo">
+    <div class="miolo topo__linha">
+      <a class="topo__logo" href="#inicio" aria-label="Seu Site Pronto, ir para o início">
+        <img src="img/logo-horizontal-fundo-azul.png" alt="Seu Site Pronto">
+      </a>
+      <nav class="topo__menu" aria-label="Menu principal">
+        <a href="#modelos">Modelos</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#duvidas">Dúvidas</a>
+      </nav>
+      <a class="botao botao--amarelo" href="#modelos">Ver modelos</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== ABERTURA (HERO) ===== -->
+    <section class="hero planta" id="inicio">
+      <div class="miolo">
+        <span class="placa hero__placa">Aberto</span>
+        <span class="etiqueta">Prancha 00 · Vitrine</span>
+        <h1 class="titulo">Site pronto pro seu negócio</h1>
+        <p class="hero__assinatura"><span class="assinatura">chave na mão, é só abrir as portas</span></p>
+        <p class="hero__apoio">Você troca o nome, as fotos e o WhatsApp. O resto já está feito.</p>
+        <a class="botao botao--amarelo" href="#modelos">Ver modelos</a>
+        <!-- Linha de medida: só decoração -->
+        <div class="medida" aria-hidden="true">
+          <span class="medida__ponta"></span>
+          <span class="medida__linha"></span>
+          <span>1440 px</span>
+          <span class="medida__linha"></span>
+          <span class="medida__ponta"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MODELOS ===== -->
+    <section class="modelos" id="modelos">
+      <div class="miolo">
+        <div class="modelos__intro">
+          <span class="etiqueta">Prancha 02 · Modelos</span>
+          <h2 class="titulo">Escolha o seu modelo</h2>
+          <p>Projetado direitinho. Pronto pro seu cliente entrar.</p>
+        </div>
+
+        <!-- O js/app.js coloca os cards aqui dentro, lendo o produtos.json -->
+        <div class="cards" id="cards" aria-live="polite">
+          <p class="aviso-cards">Carregando os modelos...</p>
+        </div>
+
+        <!-- Card fixo "Em breve" (fica depois dos cards do JSON) -->
+        <div class="cards" style="margin-top: 24px;">
+          <article class="card--breve">
+            <span class="placa">Em breve</span>
+            <h3 class="card__nome">Novos nichos</h3>
+            <p>Psicólogo, nutricionista, dentista... o próximo modelo sai do papel em breve.</p>
+            <a href="https://www.instagram.com/seusitepronto_br/" target="_blank" rel="noopener noreferrer">Acompanhe no Instagram: @seusitepronto_br</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COMO FUNCIONA ===== -->
+    <section class="passos planta" id="como-funciona">
+      <div class="miolo">
+        <span class="etiqueta">Prancha 03 · Como funciona</span>
+        <h2 class="titulo">Três passos</h2>
+        <ol class="passos__lista">
+          <li class="passo">
+            <span class="passo__rotulo">Passo</span>
+            <span class="passo__numero">01</span>
+            <p>Escolha o modelo e veja a demo.</p>
+          </li>
+          <li class="passo">
+            <span class="passo__rotulo">Passo</span>
+            <span class="passo__numero">02</span>
+            <p>Compre na Kiwify e baixe o arquivo .zip.</p>
+          </li>
+          <li class="passo">
+            <span class="passo__rotulo">Passo</span>
+            <span class="passo__numero">03</span>
+            <p>Troque textos, fotos e WhatsApp seguindo o guia e publique.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== AVISO HONESTO (bem visível) ===== -->
+    <section class="honesto" aria-labelledby="titulo-aviso">
+      <div class="miolo">
+        <div class="honesto__caixa">
+          <span class="etiqueta">Leia antes de comprar</span>
+          <h2 class="titulo" id="titulo-aviso">O que você recebe</h2>
+          <p><strong>Você recebe um modelo pronto para editar, não um site já publicado.</strong> Vem com um guia passo a passo em português para trocar seus dados e colocar no ar de graça.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DÚVIDAS ===== -->
+    <section class="duvidas" id="duvidas">
+      <div class="miolo">
+        <span class="etiqueta">Prancha 05 · Dúvidas</span>
+        <h2 class="titulo">Dúvidas</h2>
+        <div class="duvidas__lista">
+          <details>
+            <summary>Preciso saber programar?</summary>
+            <p>Não. O guia mostra, passo a passo, onde trocar o nome, as fotos e o número do WhatsApp. Se você sabe copiar e colar, consegue.</p>
+          </details>
+          <details>
+            <summary>Funciona no celular?</summary>
+            <p>Funciona. O site se ajusta à tela do celular e também do computador. Você pode conferir abrindo a demo no seu próprio telefone.</p>
+          </details>
+          <details>
+            <summary>Como recebo?</summary>
+            <p>Depois da compra na Kiwify, você baixa um arquivo .zip com o modelo e o guia. Não é um site já publicado: você edita e coloca no ar.</p>
+          </details>
+          <details>
+            <summary>Posso usar em mais de um negócio?</summary>
+            <p>Cada compra vale para um negócio. Se você tem outro negócio, precisa de outra licença.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="rodape">
+    <div class="miolo">
+      <div class="rodape__linha">
+        <img class="rodape__logo" src="img/logo-horizontal-fundo-escuro.png" alt="Seu Site Pronto">
+        <span class="assinatura">feito pro comércio do bairro</span>
+      </div>
+      <p class="rodape__fim">
+        <a href="https://www.instagram.com/seusitepronto_br/" target="_blank" rel="noopener noreferrer">@seusitepronto_br</a>
+        · © <span id="ano">2026</span> Seu Site Pronto
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

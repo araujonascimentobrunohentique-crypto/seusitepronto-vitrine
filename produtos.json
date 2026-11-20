@@ -1,0 +1,15 @@
+[
+  {
+    "id": "barbearia",
+    "nome": "Barbearia",
+    "nicho": "Barbearia",
+    "descricao": "Site de uma página com serviços, preços e agenda pelo WhatsApp.",
+    "preco": 47,
+    "imagem": "img/produtos/barbearia.jpg",
+    "demo": "https://barbeariaonepagge-template-demo.netlify.app",
+    "compra": "https://pay.kiwify.com.br/Uk1A2sK",
+    "entrega": "Arquivo .zip",
+    "folha": "01 / 03",
+    "status": "disponivel"
+  }
+]

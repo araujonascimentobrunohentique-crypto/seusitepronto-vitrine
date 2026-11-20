@@ -1,0 +1,462 @@
+/* Seu Site Pronto · Planta de bairro v1.0 */
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Yellowtail&family=Work+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+:root {
+  --ssp-planta: #0B3D91;  /* azul planta: fundos */
+  --ssp-ovo: #F2B705;     /* amarelo letreiro: destaque */
+  --ssp-traco: #EAF0FF;   /* branco traço: texto no azul */
+  --ssp-tinta: #071E4A;   /* azul tinta: sombras */
+  --ssp-preco: #C62E1F;   /* vermelho: só preço */
+  --ssp-titulo: "Alfa Slab One", Georgia, serif;
+  --ssp-assinatura: "Yellowtail", cursive;
+  --ssp-texto: "Work Sans", system-ui, sans-serif;
+  --ssp-medida: "IBM Plex Mono", monospace;
+  --ssp-sombra-titulo: 5px 5px 0 var(--ssp-ovo), 6px 6px 0 var(--ssp-tinta);
+  --ssp-sombra-botao: 4px 4px 0 var(--ssp-tinta);
+}
+
+/* Cores extras, só para as seções claras (pedido na aprovação do plano) */
+:root {
+  --ssp-papel: #F3F5FA;   /* fundo claro das seções */
+  --ssp-grafite: #14213D; /* texto nas seções claras */
+  --ssp-linha: #D5DBE8;   /* linhas finas nas seções claras */
+  --ssp-cinza: #55607A;   /* texto de apoio (descrição do card) */
+}
+
+/* ========== BASE ========== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; } /* rolagem suave ao clicar no menu */
+}
+
+body {
+  margin: 0;
+  font-family: var(--ssp-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ssp-grafite);
+  background: var(--ssp-papel);
+  overflow-x: hidden; /* garante que nunca aparece rolagem lateral */
+}
+
+img { max-width: 100%; height: auto; }
+h1, h2, h3, p { margin: 0; }
+
+/* Foco visível: contorno amarelo (com um anel escuro por dentro para aparecer no fundo claro) */
+:focus-visible {
+  outline: 3px solid var(--ssp-ovo);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--ssp-tinta);
+}
+
+/* Container central: conteúdo até ~1080px */
+.miolo {
+  width: 100%;
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+/* Fundo de planta (grade em duas escalas) */
+.planta {
+  background-color: var(--ssp-planta);
+  background-image:
+    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
+  color: var(--ssp-traco);
+}
+
+/* ========== PEÇAS DA MARCA ========== */
+
+/* Etiqueta pequena em mono acima dos títulos */
+.etiqueta {
+  display: block;
+  font-family: var(--ssp-medida);
+  font-weight: 500;
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+  color: var(--ssp-planta);
+}
+.planta .etiqueta { color: var(--ssp-ovo); }
+
+/* Título de seção: Alfa Slab One, maiúsculo */
+.titulo {
+  font-family: var(--ssp-titulo);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.1;
+  font-size: clamp(1.7rem, 6vw, 2.6rem);
+  color: var(--ssp-tinta);
+  overflow-wrap: break-word;
+}
+/* No fundo azul o título leva a sombra dura */
+.planta .titulo {
+  color: var(--ssp-traco);
+  text-shadow: var(--ssp-sombra-titulo);
+}
+
+/* Assinatura em cursiva: amarela, levemente girada */
+.assinatura {
+  display: inline-block;
+  font-family: var(--ssp-assinatura);
+  font-size: clamp(1.6rem, 5.5vw, 2.4rem);
+  line-height: 1.2;
+  color: var(--ssp-ovo);
+  transform: rotate(-3deg);
+}
+
+/* Placa amarela */
+.placa {
+  display: inline-block;
+  padding: .25rem .8rem;
+  background: var(--ssp-ovo);
+  color: var(--ssp-tinta);
+  font-family: var(--ssp-titulo);
+  font-size: .85rem;
+  text-transform: uppercase;
+  line-height: 1.4;
+  box-shadow: var(--ssp-sombra-botao);
+}
+
+/* Linha de medida: linha amarela com tracinhos nas pontas e texto no meio */
+.medida {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  color: var(--ssp-ovo);
+  font-family: var(--ssp-medida);
+  font-size: .8rem;
+}
+.medida__linha { flex: 1; height: 1.5px; background: var(--ssp-ovo); }
+.medida__ponta { width: 1.5px; height: 16px; background: var(--ssp-ovo); }
+
+/* Etiqueta de preço vermelha (único lugar com vermelho) */
+.preco {
+  position: absolute;
+  right: 12px;
+  bottom: -18px;
+  padding: .3rem .8rem;
+  background: var(--ssp-preco);
+  color: #fff;
+  font-family: var(--ssp-titulo);
+  font-size: 1.15rem;
+  line-height: 1.3;
+  transform: rotate(-6deg);
+  box-shadow: 3px 3px 0 var(--ssp-tinta);
+}
+
+/* Carimbo 2x2 */
+.carimbo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  border: 1px solid var(--ssp-planta);
+  font-family: var(--ssp-medida);
+}
+.carimbo > div { padding: .45rem .6rem; min-width: 0; }
+.carimbo > div:nth-child(odd) { border-right: 1px solid var(--ssp-planta); }
+.carimbo > div:nth-child(-n+2) { border-bottom: 1px solid var(--ssp-planta); }
+.carimbo dt {
+  font-size: .65rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ssp-cinza);
+}
+.carimbo dd {
+  margin: 0;
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--ssp-tinta);
+  overflow-wrap: break-word;
+}
+
+/* ========== BOTÕES ========== */
+.botao {
+  display: inline-block;
+  padding: .7rem 1.1rem;
+  border: 1.5px solid var(--ssp-planta);
+  border-radius: 0;
+  font-family: var(--ssp-texto);
+  font-weight: 600;
+  font-size: .95rem;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .1s, box-shadow .1s;
+}
+/* Botão amarelo: texto Alfa Slab maiúsculo + sombra dura */
+.botao--amarelo {
+  background: var(--ssp-ovo);
+  border-color: var(--ssp-tinta);
+  color: var(--ssp-tinta);
+  font-family: var(--ssp-titulo);
+  font-weight: 400;
+  font-size: .9rem;
+  text-transform: uppercase;
+  box-shadow: var(--ssp-sombra-botao);
+}
+/* Botão contorno azul */
+.botao--contorno {
+  background: transparent;
+  color: var(--ssp-planta);
+}
+/* Hover: o botão "afunda" */
+.botao--amarelo:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ssp-tinta); }
+.botao--contorno:hover { background: var(--ssp-planta); color: var(--ssp-traco); }
+.botao:focus-visible { box-shadow: 0 0 0 2px var(--ssp-tinta); }
+.botao--amarelo:focus-visible { box-shadow: 0 0 0 2px var(--ssp-tinta), var(--ssp-sombra-botao); }
+
+/* ========== TOPO ========== */
+.topo {
+  background-color: var(--ssp-planta);
+  color: var(--ssp-traco);
+  border-bottom: 1px solid rgba(234, 240, 255, .2);
+}
+.topo__linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem 1rem;
+  padding-block: 12px;
+}
+.topo__logo img { display: block; height: 40px; width: auto; }
+.topo__menu {
+  order: 3;          /* no celular, o menu desce para a segunda linha */
+  width: 100%;
+  display: flex;
+  gap: 1.25rem;
+}
+.topo__menu a {
+  color: var(--ssp-traco);
+  font-weight: 600;
+  font-size: .9rem;
+  text-decoration: none;
+  padding-block: .25rem;
+  border-bottom: 2px solid transparent;
+}
+.topo__menu a:hover { border-bottom-color: var(--ssp-ovo); }
+.topo .botao { padding: .5rem .9rem; font-size: .8rem; }
+
+@media (min-width: 720px) {
+  .topo__menu { order: 0; width: auto; gap: 2rem; }
+}
+
+/* ========== HERO ========== */
+.hero { padding-block: 48px 64px; }
+.hero__placa { margin-bottom: 1.5rem; }
+.hero .titulo {
+  font-size: clamp(2.1rem, 9vw, 4.6rem);
+  max-width: 12em;
+  margin-bottom: 1.25rem;
+}
+.hero__assinatura { margin-bottom: 1rem; }
+.hero__apoio {
+  max-width: 32em;
+  font-size: 1.1rem;
+  margin-bottom: 1.75rem;
+}
+.hero .medida { max-width: 520px; margin-top: 2.5rem; }
+
+/* ========== MODELOS ========== */
+.modelos { padding-block: 64px 72px; background: var(--ssp-papel); }
+.modelos__intro { margin-bottom: 2.5rem; }
+.modelos__intro p { margin-top: .75rem; max-width: 34em; color: var(--ssp-cinza); }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px 24px;
+  align-items: start;
+}
+
+/* Card de produto */
+.card {
+  background: #fff;
+  border: 1.5px solid var(--ssp-planta);
+  border-radius: 0;
+}
+.card__imagem {
+  position: relative;       /* a etiqueta de preço se apoia aqui */
+  aspect-ratio: 16 / 10;
+  background: var(--ssp-papel);
+}
+.card__imagem > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+/* Fundo de planta com o nome (aparece quando a imagem não existe) */
+.card__planta {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  font-family: var(--ssp-titulo);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  background-color: var(--ssp-planta);
+  background-image:
+    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
+  color: var(--ssp-traco);
+  text-shadow: var(--ssp-sombra-titulo);
+}
+.card__placa { position: absolute; top: 12px; left: 12px; }
+.card__corpo { padding: 32px 16px 16px; display: grid; gap: 1rem; }
+.card__nome {
+  font-family: var(--ssp-titulo);
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--ssp-tinta);
+  line-height: 1.15;
+}
+.card__descricao { color: var(--ssp-cinza); font-size: .95rem; }
+.card__acoes { display: grid; gap: .75rem; margin-top: .25rem; }
+
+/* Card fixo "Em breve" */
+.card--breve {
+  background-color: var(--ssp-planta);
+  background-image:
+    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--ssp-traco);
+  padding: 24px 16px;
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+}
+.card--breve .card__nome { color: var(--ssp-traco); text-shadow: var(--ssp-sombra-titulo); }
+.card--breve a { color: var(--ssp-ovo); font-weight: 600; }
+
+/* Mensagens (carregando / erro) */
+.aviso-cards {
+  grid-column: 1 / -1;
+  padding: 1rem;
+  border: 1.5px dashed var(--ssp-planta);
+  background: #fff;
+  color: var(--ssp-grafite);
+}
+
+/* ========== COMO FUNCIONA ========== */
+.passos { padding-block: 64px 72px; }
+.passos .titulo { margin-bottom: 2.5rem; }
+.passos__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.passo {
+  background: var(--ssp-tinta);
+  border: 1.5px solid rgba(234, 240, 255, .5);
+  padding: 20px 16px;
+}
+.passo__numero {
+  display: block;
+  font-family: var(--ssp-titulo);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--ssp-ovo);
+  margin-bottom: .5rem;
+}
+.passo__rotulo {
+  font-family: var(--ssp-medida);
+  font-size: .75rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ssp-traco);
+  opacity: .8;
+  display: block;
+  margin-bottom: .5rem;
+}
+
+/* ========== AVISO HONESTO ========== */
+.honesto { padding-block: 56px; background: var(--ssp-papel); }
+.honesto__caixa {
+  background: var(--ssp-ovo);
+  color: var(--ssp-tinta);
+  border: 2px solid var(--ssp-tinta);
+  padding: 24px 20px;
+  box-shadow: 6px 6px 0 var(--ssp-tinta);
+}
+.honesto__caixa .etiqueta { color: var(--ssp-tinta); }
+.honesto__caixa .titulo { margin-bottom: 1rem; font-size: clamp(1.5rem, 5vw, 2.2rem); }
+.honesto__caixa p { font-size: 1.1rem; max-width: 40em; }
+.honesto__caixa strong { font-weight: 600; }
+
+/* ========== DÚVIDAS ========== */
+.duvidas { padding-block: 64px 72px; background: #fff; border-top: 1px solid var(--ssp-linha); }
+.duvidas .titulo { margin-bottom: 2rem; }
+.duvidas__lista { max-width: 760px; border-bottom: 1px solid var(--ssp-linha); }
+.duvidas details { border-top: 1px solid var(--ssp-linha); }
+.duvidas summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 2.5rem 1rem 0;
+  position: relative;
+  font-weight: 600;
+  color: var(--ssp-tinta);
+}
+.duvidas summary::-webkit-details-marker { display: none; }
+.duvidas summary::after {
+  content: "+";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--ssp-medida);
+  font-size: 1.4rem;
+  color: var(--ssp-planta);
+}
+.duvidas details[open] summary::after { content: "\2212"; } /* sinal de menos */
+.duvidas details p { padding: 0 0 1.25rem; color: var(--ssp-cinza); max-width: 40em; }
+
+/* ========== RODAPÉ ========== */
+.rodape {
+  background: var(--ssp-tinta);
+  color: var(--ssp-traco);
+  padding-block: 48px 32px;
+}
+.rodape__linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.rodape__logo { display: block; height: 48px; width: auto; }
+.rodape a { color: var(--ssp-traco); font-family: var(--ssp-medida); }
+.rodape a:hover { color: var(--ssp-ovo); }
+.rodape__fim {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(234, 240, 255, .2);
+  font-family: var(--ssp-medida);
+  font-size: .8rem;
+}
+
+/* ========== MOVIMENTO REDUZIDO ========== */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+  .botao--amarelo:hover { transform: none; }
+}
