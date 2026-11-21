@@ -42,6 +42,11 @@ Na Netlify funciona normalmente, porque lá o endereço é `https://`.
 - Se a imagem ainda não existir, o card mostra o fundo de planta com o nome do modelo.
 - Cuidado com as vírgulas e aspas: o último item da lista **não** leva vírgula no final.
 
+## Anotações
+
+- Página de vendas do modelo Personal Trainer (na Kiwify): https://kiwify.app/LjNysET. O app não usa esse link, fica aqui só como referência.
+- O Personal Trainer ainda não tem demo publicada. Quando tiver, preencha o campo `demo` dele no `produtos.json` e o botão "Ver a demo" aparece sozinho.
+
 ## Antes de publicar
 
 No `index.html`, procure o comentário `TROCAR DEPOIS DE PUBLICAR` e coloque o endereço completo do seu site no `og:image`. Assim a imagem aparece certinho quando alguém compartilha o link.
