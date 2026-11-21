@@ -19,7 +19,7 @@
     "descricao": "Site de uma página com planos, modalidades, CREF e aula experimental pelo WhatsApp.",
     "preco": 47,
     "imagem": "img/produtos/personal-trainer.jpg",
-    "demo": "",
+    "demo": "https://personal-onepag.netlify.app/",
     "compra": "https://pay.kiwify.com.br/LncyAMM",
     "entrega": "Arquivo .zip",
     "folha": "02 / 03",
