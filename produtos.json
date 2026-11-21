@@ -11,5 +11,19 @@
     "entrega": "Arquivo .zip",
     "folha": "01 / 03",
     "status": "disponivel"
+  },
+  {
+    "id": "personal-trainer",
+    "nome": "Personal Trainer",
+    "nicho": "Personal Trainer",
+    "descricao": "Site de uma página com planos, modalidades, CREF e aula experimental pelo WhatsApp.",
+    "preco": 47,
+    "imagem": "img/produtos/personal-trainer.jpg",
+    "demo": "",
+    "compra": "https://pay.kiwify.com.br/LncyAMM",
+    "paginaVendas": "https://kiwify.app/LjNysET",
+    "entrega": "Arquivo .zip",
+    "folha": "02 / 03",
+    "status": "disponivel"
   }
 ]
