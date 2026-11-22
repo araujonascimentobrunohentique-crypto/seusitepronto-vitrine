@@ -45,7 +45,7 @@ Na Netlify funciona normalmente, porque lá o endereço é `https://`.
 ## Anotações
 
 - Página de vendas do modelo Personal Trainer (na Kiwify): https://kiwify.app/LjNysET. O app não usa esse link, fica aqui só como referência.
-- O Personal Trainer ainda não tem demo publicada. Quando tiver, preencha o campo `demo` dele no `produtos.json` e o botão "Ver a demo" aparece sozinho.
+- Os três modelos (Barbearia, Personal Trainer e Nail designer) já têm demo publicada. Se um produto novo ainda não tiver demo, deixe o campo `demo` vazio no `produtos.json` e o botão "Ver a demo" não aparece; quando preencher, ele aparece sozinho.
 
 ## Antes de publicar
 

@@ -24,5 +24,18 @@
     "entrega": "Arquivo .zip",
     "folha": "02 / 03",
     "status": "disponivel"
+  },
+  {
+    "id": "nail-designer",
+    "nome": "Site para nail designer",
+    "nicho": "Site para nail designer",
+    "descricao": "Site de uma página com vídeo no topo, serviços com preço, galeria com filtro e agendamento pelo WhatsApp.",
+    "preco": 47,
+    "imagem": "img/produtos/nail.jpg",
+    "demo": "https://nail-onepage.netlify.app/",
+    "compra": "https://pay.kiwify.com.br/3APHsUL",
+    "entrega": "Arquivo .zip",
+    "folha": "03 / 03",
+    "status": "disponivel"
   }
 ]
